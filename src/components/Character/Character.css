@@ -1,0 +1,10 @@
+.char{
+    color:white;
+    margin-top:2rem;
+    border: 1px solid grey;
+}
+.cardStyle{
+    width: 18rem;
+    color: white;
+    background-color: transparent;
+}

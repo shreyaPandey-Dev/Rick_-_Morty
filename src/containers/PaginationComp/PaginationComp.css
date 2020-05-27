@@ -1,0 +1,24 @@
+.nav{
+    margin: 3rem 0rem 3rem 1rem;
+}
+
+.paginationStyle > li > a  {
+    background: transparent;
+    border: none;
+    color: red;
+}
+.paginationStyle > li > a :hover{
+    color: red;
+    border: none;
+}
+
+
+.pageitem{
+    background: transparent;
+    border: none;
+    color: red;
+}
+.pageitem :hover{
+    color: red;
+    border: none;
+}

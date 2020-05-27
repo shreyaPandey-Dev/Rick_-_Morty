@@ -1,0 +1,1 @@
+export const ADD_FAILURE = 'ADD_CHARACTERS';

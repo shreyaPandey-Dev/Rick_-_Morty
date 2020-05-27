@@ -1,0 +1,2 @@
+export const ADD_SPECIES = 'ADD_SPECIES';
+export const DELETE_SPECIES = 'DELETE_SPECIES';
