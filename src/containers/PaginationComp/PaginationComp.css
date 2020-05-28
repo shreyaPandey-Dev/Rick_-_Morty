@@ -1,5 +1,9 @@
-.nav{
+.navpage{
     margin: 3rem 0rem 3rem 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 
 .paginationStyle > li > a  {
@@ -12,13 +16,18 @@
     border: none;
 }
 
-
-.pageitem{
+.activeitem {
+    background-color: red !important;
+    color: white !important;
+}
+.pageItem{
     background: transparent;
     border: none;
     color: red;
 }
-.pageitem :hover{
-    color: red;
-    border: none;
+
+
+.pageItem:hover {
+  color: white !important;
+  background-color: red !important;
 }

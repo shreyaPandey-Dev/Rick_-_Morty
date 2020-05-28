@@ -13,10 +13,10 @@ const Character = props => {
         <img className="card-img-top"
           src={props.data.image}
           alt="name" />
-        <div className="card-body" style={{ height: '25.8rem' }}>
+        <div className="card-body" style={{ display: 'block', paddingLeft:' 0rem'}}>
           <h5 className="card-title">{props.data.name}</h5>
           <table className="table"
-            style={{ fontSize: '1rem' }}>
+            style={{ fontSize: '1rem', tableLayout: 'fixed' }}>
             <tbody>
               <tr style={{ border: '0' }}>
                 <th scope="col">ID:{props.data.id}</th>

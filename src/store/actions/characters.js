@@ -10,9 +10,7 @@ import store from '../store'
 
 import { ADD_TOTAL_PAGE} from "../types/types";
 
-
-
-const queryBuilder = (page,name, species, gender, status) => {
+ const queryBuilder = (page,name, species, gender, status) => {
     console.log("QUERY BUILDER====", status)
     return (
         gql
@@ -49,7 +47,7 @@ const queryBuilder = (page,name, species, gender, status) => {
     )
 }
 
-const fetchCharacters = () => {
+export  const fetchCharacters = () => {
     // console.clear();
     var data = store.getState();
     console.log("STATE IN FETCHCHARS==============", data)
@@ -74,7 +72,7 @@ const fetchCharacters = () => {
 }
 // dispatch(addTodoSuccess(res.data)
 
-const addCharacters = (payload) => {
+export const addCharacters = (payload) => {
     return {
         type: ADD_CHARACTERS,
         payload: payload
@@ -82,7 +80,7 @@ const addCharacters = (payload) => {
 
 }
 
-const addFailure = error => ({
+export const addFailure = error => ({
     type: ADD_FAILURE,
     payload: {
         error
@@ -93,7 +91,7 @@ const addFailure = error => ({
 
 
 
-export   const addTotalPage = (payload) => {
+export  const addTotalPage = (payload) => {
     console.log("ACTION PAY ADD NAME========================", payload)
 
     return {

@@ -70,14 +70,14 @@ export  class Layout extends Component {
         return (
             <Aux>
                 <Header></Header>
-                <div className="container-fluid">
+                <div className="container-fluid ">
                     <div className="row">
-                        <div className="col-md-3">
+                        <div className="col-lg-3 col-sm-4 col-md-12 p-0">
                             <div className="col-md-12">
                                 <SideFilter  updatedFilter = {this.props}></SideFilter>
                             </div>
                         </div>
-                        <div className="col-md-9">
+                        <div className="col-lg-9">
                             <div className={style.jumbo} >
                                 <SearchHeaderBar
                                 removeSelectedFilter={this.removeSelectedFilter}

@@ -31,7 +31,7 @@ export default class CharacterDetails extends Component {
                     {
                         this.state.data.length>0 ?
                             (this.state.data.map((eachChar, index) => {
-                                return (<div key={index} className="col-md-4">
+                                return (<div key={index} className="col-md-4 d-flex">
                                     <Character data={eachChar} createdDate={this.calculateCreatedDate(eachChar.created)} ></Character>
                                 </div>)
                             })) : (

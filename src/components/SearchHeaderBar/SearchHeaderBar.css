@@ -1,19 +1,35 @@
-.crd{
+.crd {
     background-color: transparent;
     border: 1px solid #303030;
-    color:white;
+    color: white;
     border-radius: 5px;
-   }
+}
 
-   .searchButton{
-       background-color: transparent;
-       border: none;
-       color: red;
+@media only screen and (min-width: 767px) {
+    .searchButton {
+        background-color: transparent;
+        border: none;
+        color: red;
         position: absolute;
         display: inline-block;
         margin-top: 1%;
         z-index: 9999;
         font-weight: 600;
         font-size: 1.3rem;
+    }
+}
 
-   }
+
+/* Small devices (landscape phones, 576px and up) */
+@media only screen and (max-width: 576px) {
+
+    .searchButton {
+        display: none;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+/* @media (min-width: 768px) { ... } */
+
+/* Large devices (desktops, 992px and up) */
+/* @media (min-width: 992px) { ... } */

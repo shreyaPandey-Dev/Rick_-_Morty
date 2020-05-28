@@ -131,9 +131,10 @@ export class SideFilter extends Component {
     render() {
         
 
-        return (
-            <div className={style.sidebarcontainer}>
-                <div className={style.sidebarlogo}>
+        return ( 
+            <div className={`${style.sidebarcontainer} mt-3`}>
+                <h2>Filters</h2>
+                <div className={`${style.sidebarlogo} mt-3`}>
                     {this.props.characterType
                         .map((ctype, index) =>
                             (

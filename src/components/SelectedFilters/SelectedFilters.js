@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const SelectedFilters = (props) => {
     
 console.log("SELECTED FILTER+",props)
@@ -11,7 +10,7 @@ console.log("SELECTED FILTER+",props)
                     props.speciesFilter ? 
                     <div>
                     <h5>
-                        <span className="badge badge-danger ml-1" >
+                        <span className="badge badge-danger ml-1 text-capitalize" >
                             {props.speciesFilter}
                                 <svg  onClick={($event) => {props.removeSelectedFilter("species")}} className="bi bi-x"  width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path fillRule="fillRule" d="M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z" clipRule="clipRule" />
@@ -25,7 +24,7 @@ console.log("SELECTED FILTER+",props)
                 {
                       props.genderFilter ? <div>
                       <h5>
-                          <span className="badge badge-danger ml-1" >
+                          <span className="badge badge-danger ml-1 text-capitalize" >
                               {props.genderFilter}
                               <svg onClick={($event) => {props.removeSelectedFilter("gender")}} className="bi bi-x"  width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                   <path fillRule="fillRule" d="M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z" clipRule="clipRule" />
@@ -38,7 +37,7 @@ console.log("SELECTED FILTER+",props)
                  {
                       props.statusFilter ? <div>
                       <h5>
-                          <span className="badge badge-danger ml-1" >
+                          <span className="badge badge-danger ml-1 text-capitalize">
                               {props.statusFilter}
                               <svg onClick={($event) => {props.removeSelectedFilter("status")}} className="bi bi-x"  width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                   <path fillRule="fillRule" d="M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z" clipRule="clipRule" />

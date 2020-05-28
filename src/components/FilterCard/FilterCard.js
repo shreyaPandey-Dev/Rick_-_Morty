@@ -5,7 +5,7 @@ import style from './FilterCard.css'
 const FilterCard = props => {
 
   return (
-    <div>
+    <div className={style.filterCard}>
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-12">
@@ -19,7 +19,7 @@ const FilterCard = props => {
                         return (<div className="form-group" key={index}>
                           <input type="checkbox" className={`${style.checkbox} form-check-input`}
                           onClick ={($event) => props.getFilter($event.target.checked,checkrow,props.characterType.type)}
-                           id={checkrow.title} checked={checkrow.isChecked}  />
+                           id={checkrow.title} checked={checkrow.isChecked} onChange={()=>{}}  />
                           <label className="form-check-label" htmlFor={checkrow.title}>{checkrow.title}</label>
                         </div>)
                       }

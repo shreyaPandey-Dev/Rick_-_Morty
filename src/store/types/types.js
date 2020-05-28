@@ -2,7 +2,6 @@ export * from './characters';
 export * from './failures';
 export * from './gender';
 export * from './name';
-export * from './origin';
 export * from './species';
 export * from './status';
 export * from './orderBy';

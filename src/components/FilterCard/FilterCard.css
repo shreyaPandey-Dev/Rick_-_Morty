@@ -1,4 +1,5 @@
-.cardbdy{
+
+ .cardbdy{
     background-color: transparent;
     color:white;
 }
@@ -12,3 +13,18 @@
 .checkbox{
     margin-top: 0.6rem;
 }
+
+    .filterCard{
+        border: 1px solid grey !important;
+        border-radius: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+
+@media (min-width: 767px) and (max-width:992px) { 
+    .filterCard{
+        width: 32%;
+        float: left;
+        margin-right: 0.5rem;
+    }
+ }

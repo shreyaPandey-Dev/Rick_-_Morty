@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-// import style from './Pagination.css'
+import style from './PaginationComp.css'
 import ReactDOM from "react-dom";
 import Pagination from "react-js-pagination";
-// require("bootstrap/less/bootstrap.less");
 import store from '../../store/store'
 import fetchCharacters from '../../store/actions/characters';
 import { connect } from "react-redux";
@@ -27,16 +26,22 @@ export class PaginationComp extends Component {
 
     render() {
         return (
-            <div>
+            <div className ={style.navpage}>
                 <Pagination
+                activeLinkClass={`${style.activeitem}`}
+             activeClass={`${style.activeitem}`}
+                disabledClass={`${style.pageItem } `}
+                    itemClass= {`${style.pageItem } page-item`}
+                    linkClass={`${style.pageItem } page-link`}
                     activePage={this.props.currentPage}
                     itemsCountPerPage={20}
                     totalItemsCount={this.props.totalPage}
-                    pageRangeDisplayed={5}
+                    pageRangeDisplayed={3}
                     onChange={this.handlePageChange.bind(this)}
                 />
             </div>
-        )
+        ) 
+        // page-item,page-link
     }
 }
 

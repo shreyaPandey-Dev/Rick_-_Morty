@@ -1,14 +1,22 @@
 .sidebarcontainer {
-    position: fixed;
-    height: 100%;
+    /* position: fixed; 
+  height: 100%;
     left: 0;
     overflow-x: hidden;
-    width: 20%;
+    width: 20%; */
   }
 
   .sidebarlogo {
-    padding: 10px 15px 10px 30px;
+    /* padding: 10px 15px 10px 30px; */
+  
     font-size: 20px;
     background-color: transparent;
     color: white;
   }
+
+  @media only screen and (min-width:767px) and (max-width:992px){
+  .sidebarlogo{
+    display: flex;
+  }
+}
+ 
