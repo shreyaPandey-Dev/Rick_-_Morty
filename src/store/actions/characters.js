@@ -11,7 +11,7 @@ import store from '../store'
 import { ADD_TOTAL_PAGE} from "../types/types";
 
  const queryBuilder = (page,name, species, gender, status) => {
-    console.log("QUERY BUILDER====", status)
+    
     return (
         gql
             `{
@@ -50,13 +50,13 @@ import { ADD_TOTAL_PAGE} from "../types/types";
 export  const fetchCharacters = () => {
     // console.clear();
     var data = store.getState();
-    console.log("STATE IN FETCHCHARS==============", data)
+    
     return dispatch => {
         client.query({
             query: queryBuilder(data.currentPage,data.name, data.species, data.gender, data.status)
         }).then(
             res => {
-                console.log("res.data.characters.results", res)
+                
 
                 var  orderRes = data.orderBy === 'ascending' ? 1 : -1;
                var  sortedRes =  res.data.characters.results.sort((a, b) => orderRes * (new Date(a.created) - new Date(b.created)));
@@ -65,7 +65,7 @@ export  const fetchCharacters = () => {
                  dispatch(addTotalPage(res.data.characters.info.count));
             }
         ).catch(() => {
-            console.log("error in handler caught");
+            
             dispatch(addCharacters([]));
         })
     };
@@ -92,7 +92,7 @@ export const addFailure = error => ({
 
 
 export  const addTotalPage = (payload) => {
-    console.log("ACTION PAY ADD NAME========================", payload)
+    
 
     return {
         type: ADD_TOTAL_PAGE,

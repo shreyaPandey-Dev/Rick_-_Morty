@@ -16,8 +16,6 @@ export class PaginationComp extends Component {
 
 
     handlePageChange(pageNumber) {
-        
-        console.log(`active page is ${pageNumber}`, "TOTAL PAGE",this.props.totalPage);
         this.props.add_currentPage(pageNumber);
         this.props.get_characters();
         // this.setState({activePage: pageNumber});

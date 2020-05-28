@@ -2,7 +2,7 @@ import React from 'react';
 
 const SelectedFilters = (props) => {
     
-console.log("SELECTED FILTER+",props)
+
 
         return (
             <div className="d-flex">

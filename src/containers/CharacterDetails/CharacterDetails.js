@@ -27,7 +27,7 @@ export default class CharacterDetails extends Component {
         return (
             <div className="container-fluid">
                 <div className="row">
-                    {  console.log(" this.state.data-----------------------------------------------------------------------",   this.state.data)}
+                    {  }
                     {
                         this.state.data.length>0 ?
                             (this.state.data.map((eachChar, index) => {

@@ -47,7 +47,7 @@ export  class Layout extends Component {
          this.removeChecked(data);
          this.props.reset_currentPage();
          this.props.get_characters();
-         console.log("removeSelectedFilter=props=", store.getState())
+         
         }
 
 

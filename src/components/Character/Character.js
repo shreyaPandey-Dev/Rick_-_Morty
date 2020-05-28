@@ -4,7 +4,7 @@ import style from "./Character.css";
 
 
 const Character = props => {
-  // console.log("data-", props.data)
+
 
   if (!props.noResult) {
     return (<div className={style.char}>

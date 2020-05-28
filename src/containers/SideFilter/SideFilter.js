@@ -72,7 +72,7 @@ export class SideFilter extends Component {
 
     getFilter = (clickedEl, row, type) => {
         // this.props.getFilter(clickedEl, row, type);
-        console.log("getfilter called ******************", clickedEl, row, type)
+        
       
 
         if (String(type).toLowerCase() === 'species') {

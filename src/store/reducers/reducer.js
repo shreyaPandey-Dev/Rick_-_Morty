@@ -130,7 +130,7 @@ export default (state = initialState, action) => {
         case  ADD_TOTAL_PAGE:
         return getTotalPage(state,payload);
         case RESET_CURRENT_PAGE:
-          console.log("**********************************************in reducer currentpage==",resetCurrentPage(state,payload), state, payload)
+          
           return resetCurrentPage(state,payload);
     default:
       return state;
