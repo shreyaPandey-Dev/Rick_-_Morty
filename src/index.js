@@ -13,16 +13,15 @@ import client  from './connect'
 
 
 
-
+// const context = React.createContext();
 
 ReactDOM.render(
-  <ApolloProvider client={client}>
-    <Provider store={store}>
-      <React.StrictMode>
+
+  <Provider store={store}>
+  <ApolloProvider client={client} >
         <App />
-      </React.StrictMode>
-    </Provider>
-  </ApolloProvider>,
+  </ApolloProvider>
+  </Provider>,
   document.getElementById('root')
 );
 
