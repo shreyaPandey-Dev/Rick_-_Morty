@@ -8,18 +8,18 @@ import {
 import client from '../../connect'
 import store from '../store'
 
-import { ADD_TOTAL_PAGE} from "../types/types";
+import { ADD_TOTAL_PAGE } from "../types/types";
 
- const queryBuilder = (page,name, species, gender, status) => {
-    
+const queryBuilder = (page, name, species, gender, status) => {
+    // console.log("page,name, species, gender, status",page,name, species, gender, status )
     return (
         gql
             `{
-                characters (page: ${page},filter:
-                     {  name: "${name}", 
-                         gender: "${gender}", 
-                         species:  "${species}",
-                         status:  "${status}" }){
+                characters (page: ${page.currentPage},filter:
+                     {  name: "${name.name}", 
+                         gender: "${gender.gender}", 
+                         species:  "${species.species}",
+                         status:  "${status.status}" }){
                             info {
                                 count
                                 pages
@@ -47,37 +47,35 @@ import { ADD_TOTAL_PAGE} from "../types/types";
     )
 }
 
-export  const fetchCharacters = () => {
+export const fetchCharacters = () => {
     // console.clear();
     var data = store.getState();
-    
+
     return dispatch => {
         client.query({
-            query: queryBuilder(data.currentPage,data.name, data.species, data.gender, data.status)
+            query: queryBuilder(data.currentPage, data.name, data.species, data.gender, data.status)
         }).then(
             res => {
-                
+                console.log("data.orderBy--", data.orderBy)
 
-                var  orderRes = data.orderBy === 'ascending' ? 1 : -1;
-               var  sortedRes =  res.data.characters.results.sort((a, b) => orderRes * (new Date(a.created) - new Date(b.created)));
-                
+                var orderRes = data.orderBy.orderBy === 'ascending' ? 1 : -1;
+                var sortedRes = res.data.characters.results.sort((a, b) => orderRes * (new Date(a.created) - new Date(b.created)));
+
                 dispatch(addCharacters(sortedRes));
-                 dispatch(addTotalPage(res.data.characters.info.count));
+                dispatch(addTotalPage(res.data.characters.info.count));
             }
         ).catch(() => {
-            
+
             dispatch(addCharacters([]));
         })
     };
 }
-// dispatch(addTodoSuccess(res.data)
 
 export const addCharacters = (payload) => {
     return {
         type: ADD_CHARACTERS,
         payload: payload
     };
-
 }
 
 export const addFailure = error => ({
@@ -87,13 +85,7 @@ export const addFailure = error => ({
     }
 });
 
-
-
-
-
-export  const addTotalPage = (payload) => {
-    
-
+export const addTotalPage = (payload) => {
     return {
         type: ADD_TOTAL_PAGE,
         payload: payload

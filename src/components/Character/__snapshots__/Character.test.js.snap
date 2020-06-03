@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`character  Should Render character component  1`] = `ShallowWrapper {}`;
+
+exports[`character component Should Render  1`] = `ShallowWrapper {}`;
+
+exports[`character component Should print  1`] = `ShallowWrapper {}`;

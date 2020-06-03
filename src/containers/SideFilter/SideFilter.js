@@ -7,7 +7,7 @@ import { addGender, deleteGender } from '../../store/actions/gender';
 import { addStatus, deleteStatus } from '../../store/actions/status';
 import fetchCharacters from '../../store/actions/characters';
 import addCharacterType from '../../store/actions/characterType';
-import store from '../../store/store';
+// import store from '../../store/store';
 import {resetCurrentPage} from '../../store/actions/currentPage';
 
 
@@ -71,10 +71,6 @@ export class SideFilter extends Component {
 
 
     getFilter = (clickedEl, row, type) => {
-        // this.props.getFilter(clickedEl, row, type);
-        
-      
-
         if (String(type).toLowerCase() === 'species') {
             if (clickedEl) {
                 this.props.add_species(row.value);
@@ -107,7 +103,7 @@ export class SideFilter extends Component {
 
     removeChecked = (row, type, clickedEl) => {
         var checkVals = [];
-        var rowdata = this.props.characterType.find(x => (x.type) === type);
+        var rowdata = this.props.characterType.characterType.find(x => (x.type) === type);
         // Replacing the isClicked state of the clicked element
         rowdata.data.forEach(element => {
             if (element.value === row.value) {
@@ -120,7 +116,7 @@ export class SideFilter extends Component {
         });
 
         // Replacing the data field of specific type which is clicked
-        var tempstate = this.props.characterType;
+        var tempstate = this.props.characterType.characterType;
         tempstate.map(x => { return ((x.type) === type ? x.data = checkVals : x) })
         this.props.add_characterType(tempstate);
         this.props.reset_currentPage();
@@ -130,16 +126,18 @@ export class SideFilter extends Component {
 
     render() {
         
-
+console.log("this.props.characterType",this.props.characterType)
         return ( 
             <div className={`${style.sidebarcontainer} mt-3`}>
                 <h2>Filters</h2>
                 <div className={`${style.sidebarlogo} mt-3`}>
-                    {this.props.characterType
+                    { this.props.characterType.characterType ?
+                    this.props.characterType.characterType
                         .map((ctype, index) =>
                             (
                                 <FilterCard key={index} characterType={ctype} getFilter={this.getFilter}></FilterCard>
-                            ))}
+                            )) : null
+                        }
                 </div>
             </div>
         )

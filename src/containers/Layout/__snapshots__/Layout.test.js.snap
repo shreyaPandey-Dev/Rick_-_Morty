@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout container Should render Header component 1`] = `
+Array [
+  <Context.Provider
+    value={null}
+  >
+    <Layout
+      add_characterType={[Function]}
+      add_gender={[Function]}
+      add_name={[Function]}
+      add_orderBy={[Function]}
+      add_species={[Function]}
+      add_status={[Function]}
+      characterType={Array []}
+      characters={Array []}
+      delete_gender={[Function]}
+      delete_species={[Function]}
+      delete_status={[Function]}
+      gender="female"
+      getData={[MockFunction]}
+      getOrder={[MockFunction]}
+      get_characters={[Function]}
+      name="summer"
+      removeSelectedFilter={[MockFunction]}
+      reset_currentPage={[Function]}
+      species="alien"
+      status="alive"
+      store={
+        Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        }
+      }
+    />
+  </Context.Provider>,
+]
+`;
+
+exports[`Layout container Should snapshot Layout component 1`] = `
+Array [
+  <Context.Provider
+    value={null}
+  >
+    <Layout
+      add_characterType={[Function]}
+      add_gender={[Function]}
+      add_name={[Function]}
+      add_orderBy={[Function]}
+      add_species={[Function]}
+      add_status={[Function]}
+      characterType={Array []}
+      characters={Array []}
+      delete_gender={[Function]}
+      delete_species={[Function]}
+      delete_status={[Function]}
+      gender="female"
+      getData={[MockFunction]}
+      getOrder={[MockFunction]}
+      get_characters={[Function]}
+      name="summer"
+      removeSelectedFilter={[MockFunction]}
+      reset_currentPage={[Function]}
+      species="alien"
+      status="alive"
+      store={
+        Object {
+          "clearActions": [Function],
+          "dispatch": [Function],
+          "getActions": [Function],
+          "getState": [Function],
+          "replaceReducer": [Function],
+          "subscribe": [Function],
+        }
+      }
+    />
+  </Context.Provider>,
+]
+`;

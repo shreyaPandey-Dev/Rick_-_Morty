@@ -9,11 +9,9 @@ import { ApolloProvider } from '@apollo/react-hooks';
 
 import client  from './connect'
 
-// const store = createStore(reducer, applyMiddleware(thunk));
 
 
 
-// const context = React.createContext();
 
 ReactDOM.render(
 

@@ -15,11 +15,15 @@ const SearchHeaderBar = props => {
                 <div className="row">
                     <div className="col-md-12">
                         <div className="selected-filters d-flex" >
-                                  <SelectedFilters
-                                    speciesFilter={props.speciesFilter}
-                                    genderFilter={props.genderFilter}
-                                    statusFilter={props.statusFilter}
-                                    removeSelectedFilter= {props.removeSelectedFilter} />
+                            {
+                                (props.speciesFilter || props.genderFilter || props.removeSelectedFilter) 
+                                ? <SelectedFilters
+                                speciesFilter={props.speciesFilter}
+                                genderFilter={props.genderFilter}
+                                statusFilter={props.statusFilter}
+                                removeSelectedFilter={props.removeSelectedFilter} /> : null
+                            }
+                            
                         </div>
                     </div>
                 </div>
@@ -27,9 +31,12 @@ const SearchHeaderBar = props => {
                     <div className="form-group col-md-4">
                         <label htmlFor="name">Search by name:</label>
                         <input type="text" className="form-control d-inline-block" id="name"
-                        onKeyPress={
-                            ($event) => { return (($event.key == 'Enter') ? props.getData(inputName.current.value)  : null )}
-                        }
+                            onChange={
+                                ($event) => { return (($event.key === 'Enter') ? props.getData($event.target.value) : null) }
+                            }
+                            onKeyPress={
+                                ($event) => { return (($event.key === 'Enter') ? props.getData($event.target.value) : null) }
+                            }
                             ref={inputName} />
                         <button type="submit" className={style.searchButton}
                             onClick={($event) => { props.getData(inputName.current.value) }}>
@@ -39,7 +46,9 @@ const SearchHeaderBar = props => {
                     <div className="col-md-4">
                         <div className="form-group">
                             <label htmlFor="sel1">Sort</label>
-                            <select ref={orderBy} onChange={() => { props.getOrder(orderBy.current.value) }} className="form-control" id="sel1">
+                            <select ref={orderBy}
+                             className="sorting-cls" 
+                             onChange={($event) => { props.getOrder($event.target.value) }} className="form-control" id="sel1">
                                 <option value="ascending">Ascending</option>
                                 <option value="descending">Descending</option>
                             </select>

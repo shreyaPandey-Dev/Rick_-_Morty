@@ -26,6 +26,7 @@
     "case-sensitive-paths-webpack-plugin": "2.3.0",
     "dotenv": "8.2.0",
     "dotenv-expand": "5.1.0",
+    "enzyme-to-json": "^3.5.0",
     "eslint": "^6.6.0",
     "eslint-config-react-app": "^5.2.1",
     "eslint-loader": "3.0.3",
@@ -78,7 +79,9 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "jest"
+    "test": "jest --verbose",
+    "test:watch": "jest --watchAll --verbose",
+    "test:coverage": "jest --verbose --coverage"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -107,7 +110,7 @@
       "react-app-polyfill/jsdom"
     ],
     "setupFilesAfterEnv": [
-      "<rootDir>/src/setupTests.js"
+      "<rootDir>/src/jest.setup.js"
     ],
     "testMatch": [
       "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",

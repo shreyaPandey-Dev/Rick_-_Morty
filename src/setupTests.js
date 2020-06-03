@@ -3,9 +3,13 @@
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom/extend-expect';
-import Enzyme, { configure, shallow, mount, render } from 'enzyme';
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+
+import Enzyme, { shallow, render, mount } from 'enzyme';
+import toJson from 'enzyme-to-json';
 import Adapter from 'enzyme-adapter-react-16';
 
-configure({ adapter: new Adapter() });
-export { shallow, mount, render };
-export default Enzyme;
+Enzyme.configure({ adapter: new Adapter() })

@@ -1,9 +1,16 @@
-describe('my beverage', () => {
-   
+import React from "react";
+import { shallow } from 'enzyme';
+import Header from './Header';
 
-it('should ', () => {
-    console.log("running test 1");
-    expect(1).toEqual(1);
+
+
+describe('Header component', () => {
+it('Should print navbar title', () => {
+    // given
+    const wrapper = shallow(<Header />);
+    var title = wrapper.find('nav > span').html();
+    // when
+    expect(title).toContain('Rick and Morty');
 })
 
 });

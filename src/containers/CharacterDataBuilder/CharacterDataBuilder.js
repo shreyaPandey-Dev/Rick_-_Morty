@@ -19,7 +19,7 @@ export  class CharacterDataBuilder extends Component {
     render() {
         return (
             <h1>
-                <CharacterDetails characterData={this.props.characters}></CharacterDetails>
+                <CharacterDetails characterData={this.props.characters.characters}></CharacterDetails>
             </h1>
         );
     }
