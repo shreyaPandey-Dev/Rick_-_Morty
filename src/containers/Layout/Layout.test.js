@@ -1,10 +1,16 @@
 import React from "react";
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import configureStore from 'redux-mock-store';
-
-import Layout from './Layout';
+import { Provider } from 'react-redux';
 import App from '../../App'
-import thunk from 'redux-thunk'
+import thunk from 'redux-thunk';
+import Layout from './Layout';
+import Header from '../../components/Header/Header';
+import SideFilter from '../../containers/SideFilter/SideFilter'
+import SearchHeaderBar from '../../components/SearchHeaderBar/SearchHeaderBar'
+import CharacterDataBuilder from '../CharacterDataBuilder/CharacterDataBuilder'
+import PaginationComp from '../PaginationComp/PaginationComp'
+
 
 
 const mockgetData = jest.fn();
@@ -25,21 +31,42 @@ const store = mockStore({
     characterType: [],
     currentPage: 1,
     totalPage: 59
-  });
+});
 
 
 describe('Layout container', () => {
 
-    const wrapper = shallow(<Layout  store={store} getData={mockgetData} getOrder={mockgetOrder} removeSelectedFilter={mockremoveSelectedFilter}  />);
     store.clearActions();
-    it('Should snapshot Layout component', () => {
-        expect(wrapper.getElements()).toMatchSnapshot();
-    })
 
-    // it('Should render Header component', () => {
-    //     console.log("-------------------------------",wrapper.debug())
-    //     expect(wrapper.find('Header').html()).toHaveLength(1);
-    // })
-   
-   
+    const wrapper = mount(
+        <Provider store={store}
+            getData={mockgetData}
+            getOrder={mockgetOrder}
+            removeSelectedFilter={mockremoveSelectedFilter} >
+            <Layout />
+        </Provider>
+    );
+
+
+    it('Should render Header component', () => {
+        expect(wrapper.find(Header)).toHaveLength(1);
+    });
+
+    it('Should render SideFilter component', () => {
+        expect(wrapper.find(SideFilter)).toHaveLength(1);
+    });
+
+    it('Should render SearchHeaderBar component', () => {
+        expect(wrapper.find(SearchHeaderBar)).toHaveLength(1);
+    });
+
+    it('Should render CharacterDataBuilder component', () => {
+        expect(wrapper.find(CharacterDataBuilder)).toHaveLength(1);
+    });
+
+    it('Should render PaginationComp component', () => {
+        expect(wrapper.find(PaginationComp)).toHaveLength(1);
+    });
+
+
 });

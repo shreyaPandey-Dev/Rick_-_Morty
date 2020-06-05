@@ -1,7 +1,8 @@
 import {
     ADD_CHARACTERS,
-    ADD_FAILURE
+    ADD_FAILURE,
 } from '../types/types';
+import {enableLoader,disableLoader} from './loader';
 import {
     gql
 } from 'apollo-boost';
@@ -11,7 +12,6 @@ import store from '../store'
 import { ADD_TOTAL_PAGE } from "../types/types";
 
 const queryBuilder = (page, name, species, gender, status) => {
-    // console.log("page,name, species, gender, status",page,name, species, gender, status )
     return (
         gql
             `{
@@ -48,24 +48,24 @@ const queryBuilder = (page, name, species, gender, status) => {
 }
 
 export const fetchCharacters = () => {
-    // console.clear();
     var data = store.getState();
-
+    // add loader
+  
     return dispatch => {
+        dispatch(enableLoader());
         client.query({
             query: queryBuilder(data.currentPage, data.name, data.species, data.gender, data.status)
         }).then(
             res => {
-                console.log("data.orderBy--", data.orderBy)
-
                 var orderRes = data.orderBy.orderBy === 'ascending' ? 1 : -1;
                 var sortedRes = res.data.characters.results.sort((a, b) => orderRes * (new Date(a.created) - new Date(b.created)));
 
                 dispatch(addCharacters(sortedRes));
                 dispatch(addTotalPage(res.data.characters.info.count));
+                // remove loader
+                dispatch(disableLoader());
             }
         ).catch(() => {
-
             dispatch(addCharacters([]));
         })
     };

@@ -7,6 +7,7 @@ const Character = props => {
 
   if (!props.noResult) {
     return (
+      <div>
       <div className={style.char}>
         <div className={`${style.cardStyle} card`} >
           <img className="card-img-top"
@@ -45,13 +46,18 @@ const Character = props => {
             </table>
           </div>
         </div>
-      </div>)
+      </div>
+      </div>
+      
+      )
   } else {
-    return (<div>
-      <p>
-        No results Found!
+    return (
+      <div>
+        <p className="d-flex text-danger">
+          No results Found!
           </p>
-    </div>)
+      </div>
+    )
   }
 
 

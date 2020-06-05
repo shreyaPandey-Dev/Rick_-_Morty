@@ -7,3 +7,4 @@ export * from './status';
 export * from './orderBy';
 export * from './characterType';
 export * from './page'
+export * from './loader'

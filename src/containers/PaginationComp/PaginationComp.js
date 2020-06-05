@@ -25,7 +25,7 @@ export class PaginationComp extends Component {
                     linkClass={`${style.pageItem} page-link`}
                     activePage={this.props.currentPage.currentPage}
                     itemsCountPerPage={20}
-                    totalItemsCount={this.props.totalPage.totalPage}
+                    totalItemsCount={this.props.totalPage.totalPage || 1}
                     pageRangeDisplayed={3}
                     onChange={this.handlePageChange.bind(this)}
                 />
@@ -34,8 +34,6 @@ export class PaginationComp extends Component {
         // page-item,page-link
     }
 }
-
-
 
 const mapStateToProps = state => ({
     currentPage: state.currentPage,

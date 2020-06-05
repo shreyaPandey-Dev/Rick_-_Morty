@@ -13,7 +13,6 @@ const filterChip = (speciesValue, removeFilter, type) => {
 }
 
 const SelectedFilters = (props) => {
-    console.log("PROPS__", JSON.stringify(props))
     return (
         <div className="d-flex">
             {

@@ -14,6 +14,7 @@ import orderBy from './orderBy';
 import species from './species';
 import status from './status';
 import totalPage from './totalPage';
+import loader from './Loader';
 
 
 const rootReducer = combineReducers({
@@ -25,7 +26,8 @@ const rootReducer = combineReducers({
   orderBy: orderBy,
   species: species,
   status: status,
-  totalPage: totalPage
+  totalPage: totalPage,
+  loader: loader
 });
 
 export default rootReducer;

@@ -11,11 +11,11 @@ const wrapper = mount(<SearchHeaderBar getData={mockgetData} getOrder={mockgetOr
 it('Should simulate search input', () => {
     wrapper.find('input').simulate('keypress', {key: 'Enter',  target : {value: "summer"}})
     expect(mockgetData).toHaveBeenCalled();
-}),
+});
 it('Should simulate search button', () => {
     wrapper.find('button').simulate('click')
     expect(mockgetData).toHaveBeenCalled();
-}),
+});
 it('Should simulate sorting dropdown', () => {
     wrapper.find('select').simulate('change', {  target : {value: "ascending"}})
     expect(mockgetOrder).toHaveBeenCalled();

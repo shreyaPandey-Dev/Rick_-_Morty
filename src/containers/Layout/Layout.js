@@ -47,7 +47,6 @@ export class Layout extends Component {
 
     removeChecked = (type) => {
         var checkVals = [];
-        console.log("speciesValue--", type)
         var rowdata = this.props.characterType.characterType.find(x => String(x.type).toLowerCase() === type);
         // Replacing the isClicked state of the clicked element
         rowdata.data.forEach(element => {
@@ -63,7 +62,12 @@ export class Layout extends Component {
     render() {
         return (
             <Aux>
-                <Header></Header>
+                <Header />
+               { this.props.loader.loader ?
+                    <div className={style.overlay}>
+                        <div className={style.loader}></div>
+                    </div> : null
+               }
                 <div className="container-fluid ">
                     <div className="row">
                         <div className="col-lg-3 col-sm-4 col-md-12 p-0">
@@ -102,7 +106,8 @@ const mapStateToProps = state => ({
     species: state.species,
     gender: state.gender,
     status: state.status,
-    characterType: state.characterType
+    characterType: state.characterType,
+    loader: state.loader
 });
 
 const mapDispatchToProps = {
