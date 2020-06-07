@@ -8,6 +8,8 @@ Use these commands to Run , test and Build the app.
 ### `npm run test:watch`
 ### `npm run build`
 
+Live Demo at https://shreyapandey-dev.github.io/Rick_-_Morty/
+
 This a basic application which renders the Characters from the "Rick and Morty" TV show. User can perform search, filter and sorting here. Its created for Mobile,tablet and Desktop devices . 
 Tech Stack used :
 •	React JS
@@ -26,6 +28,8 @@ For example, user can search for either species (alien) or species (human) but n
 Reference : https://rickandmortyapi.com/documentation/#filter-characters
 Credits:  
 API : https://rickandmortyapi.com/graphql/
+
+
 
 
 
