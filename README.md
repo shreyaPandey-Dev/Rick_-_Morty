@@ -5,7 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 In the project directory, you can run:
 Use these commands to Run , test and Build the app.
 ### `npm start`
-### `npm test` ` npm run test:watch
+### `npm run test:watch`
 ### `npm run build`
 
 This a basic application which renders the Characters from the "Rick and Morty" TV show. User can perform search, filter and sorting here. Its created for Mobile,tablet and Desktop devices . 
