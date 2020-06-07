@@ -30,7 +30,8 @@ const store = mockStore({
     orderBy: 'ascending',
     characterType: [],
     currentPage: 1,
-    totalPage: 59
+    totalPage: 59,
+    loader : false
 });
 
 

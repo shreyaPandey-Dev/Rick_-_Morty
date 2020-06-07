@@ -84,7 +84,9 @@
     "build": "node scripts/build.js",
     "test": "jest --verbose",
     "test:watch": "jest --watchAll --verbose",
-    "test:coverage": "jest --verbose --coverage"
+    "test:coverage": "jest --verbose --coverage",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -160,7 +162,9 @@
     "css-loader": "^3.5.3",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
+    "gh-pages": "^3.0.0",
     "redux-mock-store": "^1.5.4",
     "style-loader": "^0.23.1"
-  }
+  },
+  "homepage": "https://shreyapandey-dev.github.io/Rick_-_Morty/"
 }

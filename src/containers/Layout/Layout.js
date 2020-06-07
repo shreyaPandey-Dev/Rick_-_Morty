@@ -63,7 +63,7 @@ export class Layout extends Component {
         return (
             <Aux>
                 <Header />
-               { this.props.loader.loader ?
+               {  this.props.loader && this.props.loader.loader ?
                     <div className={style.overlay}>
                         <div className={style.loader}></div>
                     </div> : null
