@@ -66,6 +66,7 @@ export const fetchCharacters = () => {
                 dispatch(disableLoader());
             }
         ).catch(() => {
+            dispatch(disableLoader());
             dispatch(addCharacters([]));
         })
     };
